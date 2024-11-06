@@ -3,14 +3,14 @@ pipeline {
     environment {
         SONARQUBE_SERVER = 'sq'  // Nom du serveur configuré dans Jenkins
         SONARQUBE_LOGIN = credentials('sonar-token')  // Nom des credentials configurés
-        IMAGE_NAME = 'gestion-station-ski'  // Ajout des guillemets simples
+        IMAGE_NAME = 'kaddem'  // Ajout des guillemets simples
         USER = 'hassen98'  // Ajout des guillemets simples
     }
     stages {
         stage('Checkout') {  // Première étape : récupération du code
             steps {
-                git branch: 'HassenMrakbenJebahi-5SIM4-blaugranaGroup',
-                url: 'https://github.com/hassenmrakbenjebahi/5SIM4-blaugranaGroup-gestion-station-ski.git'
+                git branch: 'master',
+                url: 'https://github.com/hassenmrakbenjebahi/kaddem.git'
             }
         }
 
