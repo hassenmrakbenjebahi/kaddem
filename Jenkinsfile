@@ -14,16 +14,12 @@ pipeline {
             }
         }
 
-        stage("Clean") {
-            steps {
-                sh "mvn clean package"
-            }
-        }
+
 
          stage("Compile") {
                     steps {
                         sh "mvn package"
-                        sh "ls -l target"
+
                     }
                 }
 
@@ -58,7 +54,7 @@ pipeline {
                             [
                                 artifactId: 'kaddem',
                                 classifier: '',
-                                file: '${env.WORKSPACE}/target/kaddem-1.0.0.jar',
+                                file: '/var/lib/jenkins/workspace/kaddem@2/target/kaddem-1.0.0.jar',
                                 type: 'jar'
                             ]
                         ]
