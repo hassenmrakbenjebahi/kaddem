@@ -19,7 +19,7 @@ services:
     image: hassen98/kaddem:1.0.14  # Remplace ${BUILD_NUMBER} par le tag approprié ou utilise 'latest'
     container_name: kaddem-app
     ports:
-      - "8089:8089"  # Mappe le port 8089 de l'hôte vers le conteneur
+      - "8090:8089"  # Mappe le port 8089 de l'hôte vers le conteneur
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3307/kaddemdb?createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
