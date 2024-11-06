@@ -67,7 +67,7 @@ pipeline {
                 }
             }
         }
-/*
+
         stage('Build Docker Image') {  // Déplacer en dehors de 'NEXUS'
             steps {
                 script {
@@ -94,7 +94,7 @@ pipeline {
                        sh 'docker-compose up -d'  // Démarre les services en arrière-plan
                    }
               }
-        }*/
+        }
     }
 
     post {
