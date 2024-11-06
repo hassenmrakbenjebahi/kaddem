@@ -40,7 +40,7 @@ pipeline {
             }
         }
 
-        /*stage('NEXUS') {
+        stage('NEXUS') {
             steps {
                 script {
                     echo "Deploying to Nexus..."
@@ -49,15 +49,15 @@ pipeline {
                         protocol: 'http',
                         nexusUrl: '192.168.50.4:8081',
                         groupId: 'tn.esprit.spring',
-                        artifactId: 'gestion-station-ski',
+                        artifactId: 'kaddem',
                         version: "1.0.${env.BUILD_NUMBER}",
                         repository: 'maven-releases',
                         credentialsId: 'ski-deploy',
                         artifacts: [
                             [
-                                artifactId: 'gestion-station-ski',
+                                artifactId: 'kaddem',
                                 classifier: '',
-                                file: '/var/lib/jenkins/workspace/5SIM4-blaugranaGroup-gestion-station-ski/target/gestion-station-ski-1.0.jar',
+                                file: '/kaddem/target/kaddem-1.0.jar',
                                 type: 'jar'
                             ]
                         ]
@@ -66,7 +66,7 @@ pipeline {
                 }
             }
         }
-
+/*
         stage('Build Docker Image') {  // Déplacer en dehors de 'NEXUS'
             steps {
                 script {
