@@ -66,7 +66,7 @@ pipeline {
                 }
             }
         }
-/*
+
         stage('Build Docker Image') {  // Déplacer en dehors de 'NEXUS'
             steps {
                 script {
@@ -75,6 +75,7 @@ pipeline {
                 }
             }
         }
+        /*
 
         stage('Docker Push') {  // Déplacer en dehors de 'NEXUS'
               steps {
