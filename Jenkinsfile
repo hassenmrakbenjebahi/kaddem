@@ -75,7 +75,7 @@ pipeline {
                 }
             }
         }
-        /*
+
 
         stage('Docker Push') {  // Déplacer en dehors de 'NEXUS'
               steps {
@@ -93,7 +93,7 @@ pipeline {
                        sh 'docker-compose up -d'  // Démarre les services en arrière-plan
                    }
               }
-        }*/
+        }
     }
 
     post {
