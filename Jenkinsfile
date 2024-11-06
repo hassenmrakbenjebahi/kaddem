@@ -23,6 +23,7 @@ pipeline {
          stage("Compile") {
                     steps {
                         sh "mvn package"
+                        sh "ls -l target"
                     }
                 }
 
@@ -57,7 +58,7 @@ pipeline {
                             [
                                 artifactId: 'kaddem',
                                 classifier: '',
-                                file: '/var/lib/jenkins/workspace/kaddem/target/kaddem-1.0.0.jar',
+                                file: '${env.WORKSPACE}/target/kaddem-1.0.0.jar',
                                 type: 'jar'
                             ]
                         ]
@@ -66,7 +67,7 @@ pipeline {
                 }
             }
         }
-
+/*
         stage('Build Docker Image') {  // Déplacer en dehors de 'NEXUS'
             steps {
                 script {
@@ -93,7 +94,7 @@ pipeline {
                        sh 'docker-compose up -d'  // Démarre les services en arrière-plan
                    }
               }
-        }
+        }*/
     }
 
     post {
