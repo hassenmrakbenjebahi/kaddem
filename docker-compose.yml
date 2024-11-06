@@ -8,7 +8,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # Permet à MySQL de démarrer sans mot de passe
       MYSQL_DATABASE: kaddemdb  # Nom de la base de données
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql  # Monte le volume pour persister les données de MySQL
     networks:
@@ -21,7 +21,7 @@ services:
     ports:
       - "8089:8089"  # Mappe le port 8089 de l'hôte vers le conteneur
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/kaddemdb?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3307/kaddemdb?createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=  # Pas de mot de passe
     depends_on:
